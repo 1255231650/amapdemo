@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.7.20'
+    repositories {
+        //阿里云maven,解决google访问速度偏慢问题
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        mavenCentral()
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+//        classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        //阿里云maven,解决google访问速度偏慢问题
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/" }
+        maven { url "https://jitpack.io" }
+//        maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+        mavenCentral()
+        google()
+        jcenter()
+    }
+}
